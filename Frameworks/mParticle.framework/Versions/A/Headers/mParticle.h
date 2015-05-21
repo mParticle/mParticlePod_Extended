@@ -48,8 +48,9 @@ typedef void(^MPSocialNetworksHandler)(MPSocialNetworks socialNetwork, BOOL gran
  the environment property. If the environment is Production, consoleLogging will always be NO, 
  regardless of the value you assign to it.
  @see environment
+ @see logLevel
  */
-@property (nonatomic, unsafe_unretained, readwrite) BOOL consoleLogging;
+@property (nonatomic, unsafe_unretained) BOOL consoleLogging;
 
 /**
  The environment property returns the running SDK environment: Development or Production.
@@ -63,6 +64,14 @@ typedef void(^MPSocialNetworksHandler)(MPSocialNetworks socialNetwork, BOOL gran
  @see beginLocationTracking:minDistance:
  */
 @property (nonatomic, strong) CLLocation *location;
+
+/**
+ Specifies the log level output to the console while the app is under development: none, error, warning, and debug.
+ If consoleLogging is set to false, the log level will be set to none automatically. When the environment is
+ Production, the log level will always be none, regardless of the value you assign to it.
+ @see environment
+ */
+@property (nonatomic, unsafe_unretained) MPLogLevel logLevel;
 
 /**
  Flag indicating whether network performance is being measured.

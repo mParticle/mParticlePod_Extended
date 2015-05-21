@@ -120,6 +120,14 @@ typedef NS_ENUM(NSUInteger, MPEmbeddedSDKInstance) {
     MPEmbeddedSDKInstanceAdjust = 68
 };
 
+/// Log Levels
+typedef NS_ENUM(NSUInteger, MPLogLevel) {
+    MPLogLevelNone = 0,
+    MPLogLevelError,
+    MPLogLevelWarning,
+    MPLogLevelDebug
+};
+
 /** Posted immediately after a new session has began.
  
  @discussion You can register to receive this notification using NSNotificationCenter. This notification contains a userInfo dictionary, you can
