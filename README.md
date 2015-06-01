@@ -1,6 +1,6 @@
 # mParticle SDK Extended
 
-Version 3.5.1
+Version 3.5.2
 
 Platform iOS
 
@@ -29,4 +29,3 @@ mParticle, Inc.
 ## License
 
 mParticle is available under mParticle license. See the LICENSE file for more info.
-
