@@ -1,5 +1,9 @@
 # mParticle CHANGELOG
 
+## 3.6.0
+
+* Support event projections for embedded SDKs
+
 ## 3.5.3
 
 * Caching configuration requests, thus reducing the need to process and store data on the client side
