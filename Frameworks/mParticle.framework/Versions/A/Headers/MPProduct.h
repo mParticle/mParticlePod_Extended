@@ -166,3 +166,31 @@
 - (instancetype)initWithName:(NSString *)name category:(NSString *)category quantity:(NSInteger)quantity revenueAmount:(double)revenueAmount __attribute__((unavailable("use initWithName:sku:quantity:price: instead")));
 
 @end
+
+// Internal
+extern NSString *const kMPProductName;
+extern NSString *const kMPProductSKU;
+extern NSString *const kMPProductUnitPrice;
+extern NSString *const kMPProductQuantity;
+extern NSString *const kMPProductRevenue;
+extern NSString *const kMPProductCategory;
+extern NSString *const kMPProductTotalAmount;
+
+// Deprecated
+extern NSString *const kMPProductTransactionId;
+extern NSString *const kMPProductAffiliation;
+extern NSString *const kMPProductCurrency;
+extern NSString *const kMPProductTax;
+extern NSString *const kMPProductShipping;
+
+// Expanded
+extern NSString *const kMPExpProductBrand;
+extern NSString *const kMPExpProductName;
+extern NSString *const kMPExpProductSKU;
+extern NSString *const kMPExpProductUnitPrice;
+extern NSString *const kMPExpProductQuantity;
+extern NSString *const kMPExpProductCategory;
+extern NSString *const kMPExpProductCouponCode;
+extern NSString *const kMPExpProductVariant;
+extern NSString *const kMPExpProductPosition;
+extern NSString *const kMPExpProductTotalAmount;

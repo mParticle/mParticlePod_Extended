@@ -211,3 +211,12 @@ typedef NS_ENUM(NSUInteger, MPCommerceEventAction) {
 - (void)setObject:(id)obj forKeyedSubscript:(NSString *)key;
 
 @end
+
+extern NSString *const kMPCEInstructionsKey;
+extern NSString *const kMPExpCECheckoutOptions;
+extern NSString *const kMPExpCECurrency;
+extern NSString *const kMPExpCEProductListName;
+extern NSString *const kMPExpCEProductListSource;
+extern NSString *const kMPExpCECheckoutStep;
+extern NSString *const kMPExpCEProductImpressionList;
+extern NSString *const kMPExpCEProductCount;

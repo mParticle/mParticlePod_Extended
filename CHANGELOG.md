@@ -1,14 +1,18 @@
 # mParticle CHANGELOG
 
+## 4.0.1
+
+* Bug fix: exposing some string constants as public
+
 ## 4.0.0
 
 * Support for commerce events with a new set of classes:
-    ** MPCommerceEvent
-    ** MPCart
-    ** MPCommerce
-    ** MPProduct (revamped)
-    ** MPPromotion
-    ** MPTransactionAttributes
+    * MPCommerceEvent
+    * MPCart
+    * MPCommerce
+    * MPProduct (revamped)
+    * MPPromotion
+    * MPTransactionAttributes
 * New methods and properties to log commerce events
 * Adjust SDK updated to 4.2.7
 * Appboy SDK updated to 2.13.1

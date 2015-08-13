@@ -71,3 +71,5 @@
 @property (nonatomic, strong) NSString *transactionId;
 
 @end
+
+extern NSString *const kMPExpTATransactionId;
