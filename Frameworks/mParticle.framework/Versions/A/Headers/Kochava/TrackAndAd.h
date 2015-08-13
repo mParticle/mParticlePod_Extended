@@ -67,7 +67,16 @@
 - (void) setLimitAdTracking:(bool)limitAdTracking;
 - (id) retrieveAttribution;
 - (void) sendDeepLink:(NSURL*)url :(NSString*)sourceApplication;
+- (NSString*) getKochavaDeviceId;
 - (bool) presentInitAd;
+
+// Apple Watch
+- (void) handleWatchEvents;
+- (void) handleWatchEvents:(NSString*)watchLink;
+- (void) handleWatchEvents:(NSString*)watchLink :(bool)calledByTrackEvent;
+
+- (void) trackWatchEvent:(NSString*)eventTitle :(NSString*)eventValue;
+
 
 @property (nonatomic, assign) id <KochavaTrackerClientDelegate> trackerDelegate;
 

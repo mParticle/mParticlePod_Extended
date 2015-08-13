@@ -36,7 +36,33 @@ typedef NS_ENUM(NSUInteger, MPEventType) {
     /** Use for other types of events not contained in this enum */
     MPEventTypeOther,
     /** Use for media related events */
-    MPEventTypeMedia
+    MPEventTypeMedia,
+    /** Internal. Used when a product is added to the cart */
+    MPEventTypeProductAddToCart,
+    /** Internal. Used when a product is removed from the cart */
+    MPEventTypeProductRemoveFromCart,
+    /** Internal. Used when the cart goes to checkout */
+    MPEventTypeProductCheckout,
+    /** Internal. Used when the cart goes to checkout with options */
+    MPEventTypeProductCheckoutOption,
+    /** Internal. Used when a product is clicked */
+    MPEventTypeProductClick,
+    /** Internal. Used when user views the details of a product */
+    MPEventTypeProductViewDetail,
+    /** Internal. Used when a product is purchased */
+    MPEventTypeProductPurchase,
+    /** Internal. Used when a product refunded */
+    MPEventTypeProductRefund,
+    /** Internal. Used when a promotion is displayed */
+    MPEventTypePromotionView,
+    /** Internal. Used when a is clicked */
+    MPEventTypePromotionClick,
+    /** Internal. Used when a product is added to the wishlist */
+    MPEventTypeProductAddToWishlist,
+    /** Internal. Used when a product is removed from the wishlist */
+    MPEventTypeProductRemoveFromWishlist,
+    /** Internal. Used when a product is displayed in a promotion */
+    MPEventTypeProductImpression
 };
 
 /// Installation Types

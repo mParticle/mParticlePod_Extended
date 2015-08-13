@@ -1,8 +1,26 @@
 # mParticle CHANGELOG
 
+## 4.0.0
+
+* Support for commerce events with a new set of classes:
+    ** MPCommerceEvent
+    ** MPCart
+    ** MPCommerce
+    ** MPProduct (revamped)
+    ** MPPromotion
+    ** MPTransactionAttributes
+* New methods and properties to log commerce events
+* Adjust SDK updated to 4.2.7
+* Appboy SDK updated to 2.13.1
+* Kahuna SDK updated to 571
+* Kochava SDK updated to 20150523
+* Appboy event attributes are logged as user attributes
+* Triggering an upload when a commerce event is logged
+* Filtering, custom mapping, and expansion of commerce events
+
 ## 3.6.0
 
-* Support event projections for embedded SDKs
+* Support for custom mappings in embedded SDKs
 
 ## 3.5.3
 

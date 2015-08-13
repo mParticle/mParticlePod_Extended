@@ -7,22 +7,30 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import <mParticle/MPUserSegments.h>
-#import <mParticle/MPProduct.h>
 #import <mParticle/MPEvent.h>
 #import <mParticle/MPEnums.h>
+#import <mParticle/MPCart.h>
+#import <mParticle/MPCommerce.h>
+#import <mParticle/MPCommerceEvent.h>
+#import <mParticle/MPProduct.h>
+#import <mParticle/MPPromotion.h>
+#import <mParticle/MPTransactionAttributes.h>
 
-/**
- Social Networks callback handler.
- @param socialNetwork the social network
- @param granted it contains the status of request, if it was granted or not
- @param error if the request was not granted, error will contain the reason, otherwise it will be nil
- */
-typedef void(^MPSocialNetworksHandler)(MPSocialNetworks socialNetwork, BOOL granted, NSError *error);
-
-#pragma mark - MParticle
 /**
  This is the main class of the mParticle SDK. It interfaces your app with the mParticle API
  so you can report and measure the many different metrics of your app.
+
+ <b>Usage:</b>
+ 
+ <b>Swift</b>
+ <pre><code>
+ let mParticle = MParticle.sharedInstance()
+ </code></pre>
+ 
+ <b>Objective-C</b>
+ <pre><code>
+ MParticle *mParticle = [MParticle sharedInstance];
+ </code></pre>
  */
 @interface MParticle : NSObject
 
@@ -34,6 +42,13 @@ typedef void(^MPSocialNetworksHandler)(MPSocialNetworks socialNetwork, BOOL gran
  @see beginLocationTracking:minDistance:
  */
 @property (nonatomic, unsafe_unretained) BOOL backgroundLocationTracking;
+
+/**
+ This property is an instance of MPCommerce. It is used to execute transactional operations on the shopping cart.
+ @see MPCommerce
+ @see MPCart
+ */
+@property (nonatomic, strong, readonly) MPCommerce *commerce;
 
 /**
  Forwards setting/resetting the debug mode for embedded third party SDKs.
@@ -145,7 +160,7 @@ typedef void(^MPSocialNetworksHandler)(MPSocialNetworks socialNetwork, BOOL gran
  will override the api_key and api_secret parameters of the (optional) MParticleConfig.plist.
  @param apiKey The API key for your account
  @param secret The API secret for your account
- @param installType You can tell the mParticle SDK if this is a new install, an upgrade, or let the SDK detect it automatically.
+ @param installationType You can tell the mParticle SDK if this is a new install, an upgrade, or let the SDK detect it automatically.
  @param environment The environment property defining the running SDK environment: Development or Production. You can set it to a specific value, or let the
  SDK auto-detect the environment for you. Once the app is deployed to the App Store, setting this parameter will have no effect, since the SDK will set
  the environment to production.
@@ -316,20 +331,27 @@ typedef void(^MPSocialNetworksHandler)(MPSocialNetworks socialNetwork, BOOL gran
 
 #pragma mark - eCommerce Transactions
 /**
+ Logs a commerce event.
+ @param commerceEvent An instance of MPCommerceEvent
+ @see MPCommerceEvent
+ */
+- (void)logCommerceEvent:(MPCommerceEvent *)commerceEvent;
+
+/**
  Logs an event with a product, such as viewing, adding to a shopping cart, etc.
  @param productEvent The event, from the MPProductEvent enum, describing the log action (view, remove from wish list, etc)
  @param product An instance of MPProduct representing the product in question
  @see MPProductEvent
  @see MPProduct
  */
-- (void)logProductEvent:(MPProductEvent)productEvent product:(MPProduct *)product;
+- (void)logProductEvent:(MPProductEvent)productEvent product:(MPProduct *)product __attribute__((deprecated("use logCommerceEvent: instead")));
 
 /**
  Logs an e-commerce transaction event.
  @param product An instance of MPProduct
  @see MPProduct
  */
-- (void)logTransaction:(MPProduct *)product;
+- (void)logTransaction:(MPProduct *)product __attribute__((deprecated("use logCommerceEvent: instead")));
 
 /**
  Logs an e-commerce transaction event.
@@ -343,7 +365,7 @@ typedef void(^MPSocialNetworksHandler)(MPSocialNetworks socialNetwork, BOOL gran
  @param shippingAmount The total cost of shipping for a transaction. If free or non-applicable use 0
  @see logTransaction:
  */
-- (void)logTransaction:(NSString *)productName affiliation:(NSString *)affiliation sku:(NSString *)sku unitPrice:(double)unitPrice quantity:(NSInteger)quantity revenueAmount:(double)revenueAmount taxAmount:(double)taxAmount shippingAmount:(double)shippingAmount __attribute__((deprecated("use logTransaction: instead")));
+- (void)logTransaction:(NSString *)productName affiliation:(NSString *)affiliation sku:(NSString *)sku unitPrice:(double)unitPrice quantity:(NSInteger)quantity revenueAmount:(double)revenueAmount taxAmount:(double)taxAmount shippingAmount:(double)shippingAmount __attribute__((deprecated("use logCommerceEvent: instead")));
 
 /**
  Logs an e-commerce transaction event.
@@ -358,7 +380,7 @@ typedef void(^MPSocialNetworksHandler)(MPSocialNetworks socialNetwork, BOOL gran
  @param transactionId A unique ID representing the transaction. This ID should not collide with other transaction IDs. If nil, mParticle will generate a random string
  @see logTransaction:
  */
-- (void)logTransaction:(NSString *)productName affiliation:(NSString *)affiliation sku:(NSString *)sku unitPrice:(double)unitPrice quantity:(NSInteger)quantity revenueAmount:(double)revenueAmount taxAmount:(double)taxAmount shippingAmount:(double)shippingAmount transactionId:(NSString *)transactionId __attribute__((deprecated("use logTransaction: instead")));
+- (void)logTransaction:(NSString *)productName affiliation:(NSString *)affiliation sku:(NSString *)sku unitPrice:(double)unitPrice quantity:(NSInteger)quantity revenueAmount:(double)revenueAmount taxAmount:(double)taxAmount shippingAmount:(double)shippingAmount transactionId:(NSString *)transactionId __attribute__((deprecated("use logCommerceEvent: instead")));
 
 /**
  Logs an e-commerce transaction event.
@@ -374,7 +396,7 @@ typedef void(^MPSocialNetworksHandler)(MPSocialNetworks socialNetwork, BOOL gran
  @param productCategory A category to which the product belongs
  @see logTransaction:
  */
-- (void)logTransaction:(NSString *)productName affiliation:(NSString *)affiliation sku:(NSString *)sku unitPrice:(double)unitPrice quantity:(NSInteger)quantity revenueAmount:(double)revenueAmount taxAmount:(double)taxAmount shippingAmount:(double)shippingAmount transactionId:(NSString *)transactionId productCategory:(NSString *)productCategory __attribute__((deprecated("use logTransaction: instead")));
+- (void)logTransaction:(NSString *)productName affiliation:(NSString *)affiliation sku:(NSString *)sku unitPrice:(double)unitPrice quantity:(NSInteger)quantity revenueAmount:(double)revenueAmount taxAmount:(double)taxAmount shippingAmount:(double)shippingAmount transactionId:(NSString *)transactionId productCategory:(NSString *)productCategory __attribute__((deprecated("use logCommerceEvent: instead")));
 
 /**
  Logs an e-commerce transaction event.
@@ -391,7 +413,7 @@ typedef void(^MPSocialNetworksHandler)(MPSocialNetworks socialNetwork, BOOL gran
  @param currencyCode The local currency of a transaction. If nil, mParticle will use "USD"
  @see logTransaction:
  */
-- (void)logTransaction:(NSString *)productName affiliation:(NSString *)affiliation sku:(NSString *)sku unitPrice:(double)unitPrice quantity:(NSInteger)quantity revenueAmount:(double)revenueAmount taxAmount:(double)taxAmount shippingAmount:(double)shippingAmount transactionId:(NSString *)transactionId productCategory:(NSString *)productCategory currencyCode:(NSString *)currencyCode __attribute__((deprecated("use logTransaction: instead")));
+- (void)logTransaction:(NSString *)productName affiliation:(NSString *)affiliation sku:(NSString *)sku unitPrice:(double)unitPrice quantity:(NSInteger)quantity revenueAmount:(double)revenueAmount taxAmount:(double)taxAmount shippingAmount:(double)shippingAmount transactionId:(NSString *)transactionId productCategory:(NSString *)productCategory currencyCode:(NSString *)currencyCode __attribute__((deprecated("use logCommerceEvent: instead")));
 
 /**
  Increases the LTV (LifeTime Value) amount of a user.
@@ -502,13 +524,11 @@ typedef void(^MPSocialNetworksHandler)(MPSocialNetworks socialNetwork, BOOL gran
 #pragma mark - Session management
 /**
  (Deprecated) Begins a new user session. It will end the current session, if one is active.
- @see mParticleSessionDidBeginNotification
  */
 - (void)beginSession __attribute__((deprecated("Register to receive the mParticleSessionDidBegin notification instead.")));
 
 /**
  (Deprecated) Ends the current session.
- @see mParticleSessionDidEndNotification
  */
 - (void)endSession __attribute__((deprecated("Register to receive the mParticleSessionDidEnd notification instead.")));
 
@@ -544,7 +564,7 @@ typedef void(^MPSocialNetworksHandler)(MPSocialNetworks socialNetwork, BOOL gran
  @param completionHandler a completion handler containing the status of the request and an error. This handler may be called more than once. One time per social
  network with it respective result.
  */
-- (void)askForAccessToSocialNetworks:(MPSocialNetworks)socialNetwork completionHandler:(MPSocialNetworksHandler)completionHandler;
+- (void)askForAccessToSocialNetworks:(MPSocialNetworks)socialNetwork completionHandler:(void (^)(MPSocialNetworks socialNetwork, BOOL granted, NSError *error))completionHandler;
 
 #pragma mark - Surveys
 /**
@@ -607,6 +627,7 @@ typedef void(^MPSocialNetworksHandler)(MPSocialNetworks socialNetwork, BOOL gran
  If the method takes longer than timeout seconds to return, the local cached segments will be returned instead,
  and the newly retrieved segments will update the local cache once the results arrive.
  @param timeout The maximum number of seconds to wait for a response from mParticle's servers. This value can be fractional, like 0.1 (100 milliseconds)
+ @param endpointId The endpoint id
  @param completionHandler A block to be called when the results are available. The user segments array is passed to this block
  @returns An array of MPUserSegments objects in the completion handler
  */
