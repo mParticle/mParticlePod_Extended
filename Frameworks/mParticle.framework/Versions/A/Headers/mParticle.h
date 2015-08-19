@@ -15,6 +15,7 @@
 #import <mParticle/MPProduct.h>
 #import <mParticle/MPPromotion.h>
 #import <mParticle/MPTransactionAttributes.h>
+#import <mParticle/MPBags.h>
 
 /**
  This is the main class of the mParticle SDK. It interfaces your app with the mParticle API
@@ -42,6 +43,20 @@
  @see beginLocationTracking:minDistance:
  */
 @property (nonatomic, unsafe_unretained) BOOL backgroundLocationTracking;
+
+/**
+ This property is an instance of MPBag, which used to describe a product bag to hold the state of products in the hands of a user. Please note a difference
+ when compared with a shopping cart. A product bag is intendend to represent product samples shipped for trial by a user, which
+ later may return the samples or add one or more to a shopping cart with the intent of purchasing them.
+ 
+ Bags, and products added to them are persisted throughout the lifetime of the application. It is up to you to remove products from
+ a bag, and remove bags according to their respective life-cycles in your app.
+ 
+ You should not try to create independent instance of this class, instead you should use this property to perform all product bags operations.
+
+ @see MPBags
+ */
+@property (nonatomic, strong, readonly) MPBags *bags;
 
 /**
  This property is an instance of MPCommerce. It is used to execute transactional operations on the shopping cart.

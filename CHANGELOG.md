@@ -1,5 +1,9 @@
 # mParticle CHANGELOG
 
+## 4.1.0
+
+* Support for product bags
+
 ## 4.0.1
 
 * Bug fix: exposing some string constants as public
