@@ -70,7 +70,7 @@
 /**
  The quantity of the product. Default value is 1
  */
-@property (nonatomic, readwrite) NSNumber *quantity;
+@property (nonatomic, strong) NSNumber *quantity;
 
 /**
  Initializes an instance of MPProduct.

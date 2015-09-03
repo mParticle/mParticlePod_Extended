@@ -38,31 +38,31 @@ typedef NS_ENUM(NSUInteger, MPEventType) {
     /** Use for media related events */
     MPEventTypeMedia,
     /** Internal. Used when a product is added to the cart */
-    MPEventTypeProductAddToCart,
+    MPEventTypeAddToCart,
     /** Internal. Used when a product is removed from the cart */
-    MPEventTypeProductRemoveFromCart,
+    MPEventTypeRemoveFromCart,
     /** Internal. Used when the cart goes to checkout */
-    MPEventTypeProductCheckout,
+    MPEventTypeCheckout,
     /** Internal. Used when the cart goes to checkout with options */
-    MPEventTypeProductCheckoutOption,
+    MPEventTypeCheckoutOption,
     /** Internal. Used when a product is clicked */
-    MPEventTypeProductClick,
+    MPEventTypeClick,
     /** Internal. Used when user views the details of a product */
-    MPEventTypeProductViewDetail,
+    MPEventTypeViewDetail,
     /** Internal. Used when a product is purchased */
-    MPEventTypeProductPurchase,
+    MPEventTypePurchase,
     /** Internal. Used when a product refunded */
-    MPEventTypeProductRefund,
+    MPEventTypeRefund,
     /** Internal. Used when a promotion is displayed */
     MPEventTypePromotionView,
     /** Internal. Used when a is clicked */
     MPEventTypePromotionClick,
     /** Internal. Used when a product is added to the wishlist */
-    MPEventTypeProductAddToWishlist,
+    MPEventTypeAddToWishlist,
     /** Internal. Used when a product is removed from the wishlist */
-    MPEventTypeProductRemoveFromWishlist,
+    MPEventTypeRemoveFromWishlist,
     /** Internal. Used when a product is displayed in a promotion */
-    MPEventTypeProductImpression
+    MPEventTypeImpression
 };
 
 /// Installation Types
@@ -143,7 +143,8 @@ typedef NS_ENUM(NSUInteger, MPEmbeddedSDKInstance) {
     MPEmbeddedSDKInstanceKahuna = 56,
     MPEmbeddedSDKInstanceComScore = 39,
     MPEmbeddedSDKInstanceForesee = 64,
-    MPEmbeddedSDKInstanceAdjust = 68
+    MPEmbeddedSDKInstanceAdjust = 68,
+    MPEmbeddedSDKInstanceBranchMetrics = 80
 };
 
 /// Log Levels

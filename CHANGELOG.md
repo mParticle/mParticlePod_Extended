@@ -1,5 +1,11 @@
 # mParticle CHANGELOG
 
+## 4.2.0
+
+* Migration from NSURLConnection to NSURLSession
+* Support for Branch Metrics (version 0.10.9) as an embedded SDK
+* The reporting of forwarded calls to embedded SDKs is done client side and uploaded to the server
+
 ## 4.1.0
 
 * Support for product bags
