@@ -1,5 +1,9 @@
 # mParticle CHANGELOG
 
+## 4.3.0
+
+* Support for iOS 9
+
 ## 4.2.0
 
 * Migration from NSURLConnection to NSURLSession
