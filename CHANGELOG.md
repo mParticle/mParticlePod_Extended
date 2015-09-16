@@ -1,5 +1,9 @@
 # mParticle CHANGELOG
 
+## 4.3.1
+
+* SDK compiled with Xcode 6.4 to avoid the issues caused by Xcode 7 with dSYMs and 3rd party libraries
+
 ## 4.3.0
 
 * Support for iOS 9
