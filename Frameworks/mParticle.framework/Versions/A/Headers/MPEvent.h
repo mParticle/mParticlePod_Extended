@@ -18,6 +18,11 @@
 @property (nonatomic, strong) NSString *category;
 
 /**
+ Custom flags are a collection of attributes which by default are not forwarded to embedded SDKs.
+ */
+@property (nonatomic, strong, readonly) NSDictionary *customFlags;
+
+/**
  The duration, in milliseconds, of an event. This property can be set by a developer, or
  it can be calculated automatically by the mParticle SDK using the beginTiming/endTiming
  methods.
@@ -70,5 +75,19 @@
  @returns An instance of MPEvent or nil, if it could not be initialized.
  */
 - (instancetype)initWithName:(NSString *)name type:(MPEventType)type __attribute__((objc_designated_initializer));
+
+/**
+ Adds a custom flag associated with a key to the event.
+ @param customFlag A string attribute
+ @param key The key associated with the custom flag.
+ */
+- (void)addCustomFlag:(NSString *)customFlag withKey:(NSString *)key;
+
+/**
+ Adds an array of custom flags associated with a key to the event.
+ @param customFlags An array of string attributes
+ @param key The key associated with the custom flags.
+ */
+- (void)addCustomFlags:(NSArray *)customFlags withKey:(NSString *)key;
 
 @end

@@ -1,5 +1,10 @@
 # mParticle CHANGELOG
 
+## 4.4.0
+
+* Support for custom flags in events
+* Compiled with Xcode 6.4
+
 ## 4.3.1
 
 * SDK compiled with Xcode 6.4 to avoid the issues caused by Xcode 7 with dSYMs and 3rd party libraries
