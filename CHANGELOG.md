@@ -1,5 +1,9 @@
 # mParticle CHANGELOG
 
+## 4.4.1
+
+* Bugfix for an exception in network operations
+
 ## 4.4.0
 
 * Support for custom flags in events
