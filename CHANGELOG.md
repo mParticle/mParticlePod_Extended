@@ -1,5 +1,9 @@
 # mParticle CHANGELOG
 
+## 4.4.2
+
+* Bugfix for an array out of bounds in commerce events
+
 ## 4.4.1
 
 * Bugfix for an exception in network operations
