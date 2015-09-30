@@ -1,5 +1,11 @@
 # mParticle CHANGELOG
 
+## 4.4.3
+
+* Better handling of network operation exceptions
+* Appboy SDK updated to version 2.16
+* Compiled with Xcode 7.0.1
+
 ## 4.4.2
 
 * Bugfix for an array out of bounds in commerce events
