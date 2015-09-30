@@ -1,5 +1,9 @@
 # mParticle CHANGELOG
 
+## 4.4.4
+
+* Removed the WatchKit portion of the Appboy SDK
+
 ## 4.4.3
 
 * Better handling of network operation exceptions
