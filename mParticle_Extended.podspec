@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name                    = "mParticle_Extended"
-    s.version                 = "4.4.4"
+    s.version                 = "4.4.5"
     s.summary                 = "mParticle SDK Extended in a CocoaPod"
     s.homepage                = "http://www.mparticle.com"
     s.license                 = { :type => 'Commercial', :text => 'Please refer to https://github.com/mParticle/mParticlePod/blob/master/LICENSE'}

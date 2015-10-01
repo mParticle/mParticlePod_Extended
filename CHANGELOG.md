@@ -1,5 +1,9 @@
 # mParticle CHANGELOG
 
+## 4.4.5
+
+* Kochava SDK downgraded to version 20150116 to avoid the dependency on WatchKit and the requirement for minimum deployment target of iOS 8.3
+
 ## 4.4.4
 
 * Removed the WatchKit portion of the Appboy SDK
