@@ -1,5 +1,9 @@
 # mParticle CHANGELOG
 
+## 4.4.6
+
+* Fixed a bug when fetching product bags from the database. The column index of the parameters table is offset by 1
+
 ## 4.4.5
 
 * Kochava SDK downgraded to version 20150116 to avoid the dependency on WatchKit and the requirement for minimum deployment target of iOS 8.3
