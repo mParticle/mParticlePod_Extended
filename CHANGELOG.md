@@ -1,5 +1,9 @@
 # mParticle CHANGELOG
 
+## 4.4.7
+
+* Fixed a bug reusing a prepared statement to persist a product bag
+
 ## 4.4.6
 
 * Fixed a bug when fetching product bags from the database. The column index of the parameters table is offset by 1
