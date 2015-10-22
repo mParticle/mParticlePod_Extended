@@ -1,5 +1,10 @@
 # mParticle CHANGELOG
 
+## 4.4.8
+
+* Forwarding all available user attributes to kits when applicable
+* Forwarding all available user identities to kits when applicable
+
 ## 4.4.7
 
 * Fixed a bug reusing a prepared statement to persist a product bag

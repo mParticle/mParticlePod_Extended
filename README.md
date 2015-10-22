@@ -1,6 +1,6 @@
 # mParticle SDK Extended
 
-Version 4.4.7
+Version 4.4.8
 
 Platform iOS
 
