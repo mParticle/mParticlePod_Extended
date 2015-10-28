@@ -1,5 +1,10 @@
 # mParticle CHANGELOG
 
+## 4.5.0
+
+* Added support to the new iOS 9 application:openURL:options: app delegate method
+* Fixed a bug migrating data when the database structure changes
+
 ## 4.4.8
 
 * Forwarding all available user attributes to kits when applicable

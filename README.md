@@ -1,6 +1,6 @@
 # mParticle SDK Extended
 
-Version 4.4.8
+Version 4.5.0
 
 Platform iOS
 
@@ -9,7 +9,7 @@ Platform iOS
 Add the following to your Podfile:
 
 ```
-	pod 'mParticle_Extended', '~> 4'
+pod 'mParticle_Extended', '~> 4'
 ```
 
 Make sure you have an account with GitHub and have added your ssh-rsa to the list of SSH keys, before trying to install the mParticle pod.
