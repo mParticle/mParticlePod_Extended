@@ -1,5 +1,9 @@
 # mParticle CHANGELOG
 
+## 4.5.1
+
+* Fixed a bug about events with no attributes not being forwarded to kits
+
 ## 4.5.0
 
 * Added support to the new iOS 9 application:openURL:options: app delegate method
