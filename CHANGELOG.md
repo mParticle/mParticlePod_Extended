@@ -1,5 +1,11 @@
 # mParticle CHANGELOG
 
+## 4.5.2
+
+* Validating the authenticity of network requests by alternative means to avoid errors raised by 3rd party SDKs mutating and proxying mParticle's original object performing the request
+* Removed legacy semaphores from network connections
+* Fixed a bug referencing commerce event names
+
 ## 4.5.1
 
 * Fixed a bug about events with no attributes not being forwarded to kits
