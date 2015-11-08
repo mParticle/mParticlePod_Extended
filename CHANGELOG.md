@@ -1,5 +1,10 @@
 # mParticle CHANGELOG
 
+## 4.5.3
+
+* Each commerce event action is dealt with in an action-by-action basis for Kahuna
+* Fixed a bug expanding and forwarding events to kits with no support to eCommerce events
+
 ## 4.5.2
 
 * Validating the authenticity of network requests by alternative means to avoid errors raised by 3rd party SDKs mutating and proxying mParticle's original object performing the request
