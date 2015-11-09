@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name                    = "mParticle_Extended"
-    s.version                 = "4.5.3"
+    s.version                 = "4.5.4"
     s.summary                 = "mParticle SDK Extended in a CocoaPod"
     s.homepage                = "http://www.mparticle.com"
     s.license                 = { :type => 'Commercial', :text => 'Please refer to https://github.com/mParticle/mParticlePod/blob/master/LICENSE'}
@@ -13,6 +13,7 @@ Pod::Spec.new do |s|
     s.weak_framework          = 'AdSupport', 'iAd', 'StoreKit'
     s.documentation_url       = 'http://docs.mparticle.com'
     s.docset_url              = 'https://static.mparticle.com/sdk/ios/com.mparticle.mParticle-SDK.docset/Contents/Resources/Documents/index.html'
+    s.social_media_url        = "https://twitter.com/mparticles"
     s.resources               = ["Resources/*"]
     s.dependency 'SDWebImage', '~>3.7.0'
 end
